@@ -1,4 +1,5 @@
 import { type StateCreator } from 'zustand';
+import { produce } from 'immer';
 
 export type ICountStore = {
   count: number;
@@ -8,6 +9,16 @@ export type ICountStore = {
 
 export const countStoreCreator: StateCreator<ICountStore> = set => ({
   count: 0,
-  increase: () => set(state => ({ count: state.count + 1 })),
-  decrease: () => set(state => ({ count: state.count - 1 })),
+  increase: () =>
+    set(
+      produce((state: ICountStore) => {
+        ++state.count;
+      }),
+    ),
+  decrease: () =>
+    set(
+      produce(state => {
+        --state.count;
+      }),
+    ),
 });
