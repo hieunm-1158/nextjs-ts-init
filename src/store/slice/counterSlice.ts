@@ -1,4 +1,3 @@
-import { type StateCreator } from 'zustand';
 import { produce } from 'immer';
 
 export type ICountStore = {
@@ -7,7 +6,9 @@ export type ICountStore = {
   decrease: () => void;
 };
 
-export const countStoreCreator: StateCreator<ICountStore> = set => ({
+export const counterSlice = (
+  set: (fn: (state: ICountStore) => ICountStore | Partial<ICountStore>) => void,
+) => ({
   count: 0,
   increase: () =>
     set(
