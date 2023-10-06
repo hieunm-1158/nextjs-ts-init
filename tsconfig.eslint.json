@@ -11,6 +11,8 @@
     "next.config.js",
     "next-i18next.config.js",
     "postcss.config.js",
-    "tailwind.config.js"
+    "tailwind.config.js",
+    "jest.config.ts",
+    "jest.setup.ts"
   ]
 }

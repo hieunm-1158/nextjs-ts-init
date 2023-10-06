@@ -1,7 +1,8 @@
-import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
+/** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
-const config: Config = {
+module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
@@ -71,4 +72,3 @@ const config: Config = {
     }),
   ],
 };
-export default config;
