@@ -1,4 +1,6 @@
 import { ReactElement } from 'react';
+import { GetServerSideProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/layouts/MainLayout';
 import { useCountStore } from '@/store/count/store';
@@ -32,6 +34,14 @@ const HomePage = () => {
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
   return <MainLayout>{page}</MainLayout>;
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale as string, ['common'])),
+    },
+  };
 };
 
 export default HomePage;

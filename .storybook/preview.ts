@@ -1,7 +1,15 @@
 import type { Preview } from '@storybook/react';
-import 'tailwindcss/tailwind.css';
+import i18n from './i18n';
+import '@/styles/globals.css';
 
 const preview: Preview = {
+  globals: {
+    locale: 'en',
+    locales: {
+      en: 'English 🇺🇸',
+      vi: 'Vietnamese 🇻🇳',
+    },
+  },
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -10,6 +18,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    i18n,
   },
 };
 

@@ -9,6 +9,7 @@
     "src/**/*.jsx",
     ".eslintrc.js",
     "next.config.js",
+    "next-i18next.config.js",
     "postcss.config.js",
     "tailwind.config.js"
   ]
