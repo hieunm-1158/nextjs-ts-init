@@ -13,4 +13,5 @@ module.exports = {
   proseWrap: 'preserve',
   htmlWhitespaceSensitivity: 'strict',
   endOfLine: 'lf',
-}
+  plugins: ['prettier-plugin-tailwindcss'],
+};

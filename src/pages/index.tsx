@@ -9,19 +9,19 @@ const HomePage = () => {
   const { count, increase, decrease } = useCountStore();
   return (
     <div className="py-20">
-      <h1 className="text-primary-500 text-2xl text-center">
+      <h1 className="text-center text-2xl text-primary-500">
         You've clicked the button {count} times.
       </h1>
-      <div className="flex justify-center w-full">
+      <div className="flex w-full justify-center">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-3"
+          className="mr-3 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
           type="button"
           onClick={increase}
         >
           Increase
         </button>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
           type="button"
           onClick={decrease}
         >

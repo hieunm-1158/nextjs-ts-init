@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="font-customize min-h-screen">
+      <body className="min-h-screen font-customize">
         <Main />
         <NextScript />
       </body>
