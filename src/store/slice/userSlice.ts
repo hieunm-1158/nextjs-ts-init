@@ -1,4 +1,4 @@
-import { IUser } from '@/utils/authentication';
+import { IUser } from '@/typings/user.type';
 
 export type IUserStore = {
   currentUser: IUser;

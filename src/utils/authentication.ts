@@ -1,12 +1,8 @@
-export type IUser = {
-  id: number;
-  email: string;
-  age: number;
-};
+import { IUser } from '@/typings/user.type';
+
+import http from './http';
 
 export const authentication = async () => {
-  const response = await fetch('https://dummyjson.com/users/1');
-  const user: IUser = await response.json();
-
+  const user: IUser = await http.get('users/1');
   return user;
 };

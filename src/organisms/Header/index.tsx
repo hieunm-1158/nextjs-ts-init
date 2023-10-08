@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
-import routes from '@/routes';
+import routes from '@/constants/routes';
 
 const Header = () => {
   const { t } = useTranslation();
