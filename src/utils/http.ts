@@ -80,8 +80,7 @@ export class Http {
             storageKeys.REFRESH_TOKEN,
           ]);
         }
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return response.data;
+        return response;
       },
       async (error: AxiosError) => {
         //NOTE: When Error 401

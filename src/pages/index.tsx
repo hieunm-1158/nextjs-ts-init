@@ -2,22 +2,34 @@ import { ReactElement } from 'react';
 import { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { shallow } from 'zustand/shallow';
+import useSWR from 'swr';
 
 import MainLayout from '@/layouts/MainLayout';
 import { initStoreForGSSP, useRootStoreContext } from '@/store';
 import { authentication } from '@/utils/authentication';
+import { IProduct } from '@/typings/product.type';
+import {
+  getDetailProduct,
+  getKeyDetailProduct,
+} from '@/services/productService.api';
 
 const HomePage = () => {
   const { count, increase, decrease, currentUser } = useRootStoreContext(
     state => state,
     shallow,
   );
+  const { data: product } = useSWR<IProduct>(
+    getKeyDetailProduct(1),
+    getDetailProduct,
+  );
+
   return (
     <div className="py-20">
       <h1>Email:{currentUser.email}</h1>
-      <h1 className="text-center text-2xl text-primary-500">
+      <h2>Product:{JSON.stringify(product)} </h2>
+      <h3 className="text-center text-2xl text-primary-500">
         You've clicked the button {count} times.
-      </h1>
+      </h3>
       <div className="flex w-full justify-center">
         <button
           className="mr-3 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
